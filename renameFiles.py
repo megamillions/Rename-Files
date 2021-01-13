@@ -9,17 +9,17 @@ files = os.listdir()
 file_format = '.pdf'
 
 for file in files:
-    if file[-4:] == file_format:
-        
-        old_name_raw = file[:-4]
-        
-        # Month-day-year.
-        m, d, y = re.split('_|-', old_name_raw)
-        
+	if file[-4:] == file_format:
+
+		old_name_raw = file[:-4]
+
+		# Month-day-year.
+		m, d, y = re.split('_|-', old_name_raw)
+
 		# Edit flavor text as needed.
-        new_name = 'eStatement %s-%s-%s.pdf' % (y, m, d)
+		new_name = 'Flavor %s-%s-%s.pdf' % (y, m, d)
 
-        os.rename(file, new_name)
+		os.rename(file, new_name)
 
-        print('File formerly known as %s has successfully been renamed to %s.'
-              % (file, new_name))
+		print('File formerly known as %s has successfully been renamed to %s.'
+		      % (file, new_name))
